@@ -1,4 +1,15 @@
-<button [disabled]="!canAddCar" class="btn btn-primary">Добавить машину</button>
+<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<p>{{ addCarStatus }}</p>
 <hr>
 <app-car></app-car>
 <app-car></app-car>
+
+<hr>
+<input type="text" class="form-control" (input)="onKeyup($event)">
+<p>{{ textInput }}</p>
+
+<input type="text" class="form-control" #myInp (input)="onKeyup2(myInp.value)">
+<p>{{ textInput2 }}</p>
+
+<input type="text" class="form-control" (keyup.enter)="onKeyup3($event)">
+<p>{{ textInput3 }}</p>
