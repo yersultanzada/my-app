@@ -7,13 +7,13 @@ import { Component } from '@angular/core';
 })
 export class CarsComponent {
 
-  addCarStatus = '';
+  addCarStatus = false;
   textInput = '';
   textInput2 = '';
-  textInput3 = '';
+  textInput3 = 'Default';
 
   addCar() {
-    this.addCarStatus = 'Машина добавлена!';
+    this.addCarStatus = true;
   }
 
   constructor() {
