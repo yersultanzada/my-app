@@ -11,10 +11,19 @@ export class CarsComponent {
   textInput = '';
   textInput2 = '';
   textInput3 = 'Default';
+  carName = '';
+
+
+  cars = ['Ford', 'Audi', 'BMW', 'Mazda', 'Bentley', 'Maserati'];
+
 
   addCar() {
     this.addCarStatus = true;
+    this.cars.push(this.carName);
+    this.carName = '';
   }
+
+  ///////////////////////////////
 
   constructor() {
   }
