@@ -1,48 +1,33 @@
-import { Component } from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.css']
+  styleUrls: ['./cars.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CarsComponent {
 
-  addCarStatus = false;
-  textInput = '';
-  textInput2 = '';
-  textInput3 = 'Default';
-  carName = '';
 
-
-  cars = ['Ford', 'Audi', 'BMW', 'Mazda', 'Bentley', 'Maserati'];
-  dates = [
-    new Date(2015, 3, 31),
-    new Date(2011, 5, 3),
-    new Date(2010, 12, 14),
-  ];
-
-
-  addCar() {
-    this.addCarStatus = true;
-    this.cars.push(this.carName);
-    this.carName = '';
-  }
-
-
-  ///////////////////////////////
+  cars: [{ name: string, year: number }] = [{
+    name: 'Ford',
+    year: 2015
+  }, {
+    name: 'Mazda',
+    year: 2017
+  }, {
+    name: 'Audi',
+    year: 2010
+  }];
 
   constructor() {
+
   }
 
-  onKeyup(event: Event) {
-    this.textInput = (<HTMLInputElement>event.target).value;
+  updateCarList(car: { name: string, year: number }) {
+    this.cars.push(car);
   }
 
-  onKeyup2(value) {
-    this.textInput2 = value;
-  }
 
-  onKeyup3(event) {
-    this.textInput3 = event.target.value;
-  }
+
 }
