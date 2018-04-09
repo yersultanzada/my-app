@@ -6,7 +6,6 @@ import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@a
   styleUrls: ['./add-car.component.css']
 })
 export class AddCarComponent implements OnInit {
-  carYear = 2017;
   @Output('onAddCar') carEmitter = new EventEmitter<{name: string, year: number}>();
   @ViewChild('carYearInput') carYearInput: ElementRef;
 
